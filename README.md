@@ -112,7 +112,7 @@ posted is determined by the filename (.json=JSON, anything else=XML)
 ```
 
 Configuration
-=============
+-------------
 
 Before you source `pkg.sh`, set the environment variables `MLUSER` and `MLPASS` to
 the username and password of the MarkLogic user that will be performing the
@@ -126,7 +126,7 @@ Most (but not all) commands take an undocumented initial `-d` option
 that will display the actual curl command invoked.
 
 Share and enjoy!
-================
+----------------
 
 (Oh, and if you convert the Bash functions to some other shell, feel free
 to send a pull request and I'll add 'em. Or, you know, just use bash.)
