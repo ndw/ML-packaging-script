@@ -70,8 +70,9 @@ pkg_install myNewPackage
 ```
 
 If you want to see what the package will change, you can run
-`pkg_diff` before doing the install. If you want to do that, you might
-be better off using the UI.
+`pkg_diff` before doing the install. It's easier to see the differences in
+the UI, though, so if you aren't sure what the package does, it's probably
+better to do the install half in the UI.
 
 Anyway, here are the commands you get:
 
@@ -110,7 +111,22 @@ pkg_revert                 [-xml|-json] ticketnumber
 posted is determined by the filename (.json=JSON, anything else=XML)
 ```
 
+Configuration
+=============
+
+Before you source `pkg.sh`, set the environment variables `MLUSER` and `MLPASS` to
+the username and password of the MarkLogic user that will be performing the
+package commands.
+
+You can also set `BASE` to change the base URI of the package REST API. There
+are a couple of other settings at the top of `pkg.sh` that you might want to
+check out.
+
+Most (but not all) commands take an undocumented initial `-d` option
+that will display the actual curl command invoked.
+
 Share and enjoy!
+================
 
 (Oh, and if you convert the Bash functions to some other shell, feel free
 to send a pull request and I'll add 'em. Or, you know, just use bash.)
