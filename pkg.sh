@@ -487,9 +487,9 @@ function pkg_add_database {
 
 function pkg_add_database_config {
     # [-xml|-json] pkgname database [database...]
-    local DEBUG=0
+    local DEBUG=""
     if [ "$1" = "-d" ]; then
-        DEBUG=1
+        DEBUG="-d"
         shift
     fi
 
@@ -504,12 +504,11 @@ function pkg_add_database_config {
     if [ $# -lt 2 ]; then
         echo "Usage: $FUNCNAME [-xml|-json] pkgname database [database...]"
     else
-        # no debug support here
         PKG=$1
         shift
         for db in $*; do
-            pkg_database_configuration -$FMT $db > /tmp/pkg.temp.$$.$FMT
-            pkg_add -$FMT $PKG /tmp/pkg.temp.$$.$FMT
+            pkg_database_configuration $DEBUG -$FMT $db > /tmp/pkg.temp.$$.$FMT
+            pkg_add $DEBUG -$FMT $PKG /tmp/pkg.temp.$$.$FMT
         done
         rm -f /tmp/pkg.temp.$$.$FMT
     fi
@@ -702,9 +701,9 @@ function pkg_add_server {
 
 function pkg_add_server_config {
     # [-xml|-json] [-modules] pkgname group server [server...]
-    local DEBUG=0
+    local DEBUG=""
     if [ "$1" = "-d" ]; then
-        DEBUG=1
+        DEBUG="-d"
         shift
     fi
 
@@ -738,12 +737,11 @@ function pkg_add_server_config {
     if [ $# -lt 3 ]; then
         echo "Usage: $FUNCNAME [-xml|-json] [-modules] pkgname group server"
     else
-        # no debug support here
         PKG=$1; shift
         GRP=$1; shift
         for srv in $*; do
-            pkg_server_configuration -$FMT $MOD $GRP $srv > /tmp/pkg.temp.$$.$FMT
-            pkg_add -$FMT $PKG /tmp/pkg.temp.$$.$FMT
+            pkg_server_configuration $DEBUG -$FMT $MOD $GRP $srv > /tmp/pkg.temp.$$.$FMT
+            pkg_add $DEBUG -$FMT $PKG /tmp/pkg.temp.$$.$FMT
         done
         rm -f /tmp/pkg.temp.$$.$FMT
     fi
