@@ -43,13 +43,13 @@ function pkg_help {
 
 function pkg_database_configuration {
     # [-xml|-json] dbname [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -75,13 +75,13 @@ function pkg_database_configuration {
 
 function pkg_all_database_configurations {
     # [-xml|-json] [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -104,14 +104,14 @@ function pkg_all_database_configurations {
 
 function pkg_server_configuration {
     # [-xml|-json] [-modules] group server [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
-    MOD=false
+    local FMT=xml
+    local MOD=false
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -150,13 +150,13 @@ function pkg_server_configuration {
 
 function pkg_all_server_configurations {
     # [-xml|-json] [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -179,13 +179,13 @@ function pkg_all_server_configurations {
 
 function pkg_list {
     # [-xml|-json] [start] [length]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -210,13 +210,13 @@ function pkg_list {
 
 function pkg_create {
     # [-xml|-json] pkgname [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -251,7 +251,7 @@ function pkg_create {
 
 function pkg_exists {
     # pkgname
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
@@ -274,7 +274,7 @@ function pkg_exists {
 
 function pkg_get {
     # pkgname [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
@@ -296,13 +296,13 @@ function pkg_get {
 
 function pkg_add {
     # [-xml|-json] pkgname filename
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -331,13 +331,13 @@ function pkg_add {
 
 function pkg_delete {
     # [-xml|-json] pkgname
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -360,13 +360,13 @@ function pkg_delete {
 
 function pkg_list_databases {
     # [-xml|-json] pkgname [start] [length]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -391,13 +391,13 @@ function pkg_list_databases {
 
 function pkg_database_exists {
     # [-xml|-json] pkgname database
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -422,13 +422,13 @@ function pkg_database_exists {
 
 function pkg_get_database {
     # [-xml|-json] pkgname database [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -452,13 +452,13 @@ function pkg_get_database {
 
 function pkg_add_database {
     # [-xml|-json] pkgname database filename
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -487,13 +487,13 @@ function pkg_add_database {
 
 function pkg_add_database_config {
     # [-xml|-json] pkgname database [database...]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -517,13 +517,13 @@ function pkg_add_database_config {
 
 function pkg_delete_database {
     # [-xml|-json] pkgname database
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -547,13 +547,13 @@ function pkg_delete_database {
 
 function pkg_list_servers {
     # [-xml|-json] pkgname [start] [length]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -578,13 +578,13 @@ function pkg_list_servers {
 
 function pkg_server_exists {
     # [-xml|-json] pkgname group server
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -611,14 +611,14 @@ function pkg_server_exists {
 
 function pkg_get_server {
     # [-xml|-json] [-modules] pkgname group server [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
-    MOD=false
+    local FMT=xml
+    local MOD=false
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -654,14 +654,14 @@ function pkg_get_server {
 
 function pkg_add_server {
     # [-xml|-json] [-modules] pkgname group server filename
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
-    MOD=false
+    local FMT=xml
+    local MOD=false
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -702,14 +702,14 @@ function pkg_add_server {
 
 function pkg_add_server_config {
     # [-xml|-json] [-modules] pkgname group server [server...]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
-    MOD=""
+    local FMT=xml
+    local MOD=""
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -751,13 +751,13 @@ function pkg_add_server_config {
 
 function pkg_delete_server {
     # [-xml|-json] pkgname group server
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -781,7 +781,7 @@ function pkg_delete_server {
 
 function pkg_post {
     # pkgname filename
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
@@ -809,14 +809,14 @@ function pkg_post {
 
 function pkg_diff {
     # [-xml|-json] [-only] pkgname [filename]
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
-    VIEW=differences
+    local FMT=xml
+    local VIEW=differences
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -850,13 +850,13 @@ function pkg_diff {
 
 function pkg_errors {
     # [-xml|-json] pkgname
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
     INST=
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
@@ -890,13 +890,13 @@ function pkg_errors {
 
 function pkg_valid {
     # [-xml|-json] pkgname
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -919,13 +919,13 @@ function pkg_valid {
 
 function pkg_install {
     # [-xml|-json] pkgname
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
@@ -948,13 +948,13 @@ function pkg_install {
 
 function pkg_revert {
     # [-xml|-json] ticketnumber
-    DEBUG=0
+    local DEBUG=0
     if [ "$1" = "-d" ]; then
         DEBUG=1
         shift
     fi
 
-    FMT=xml
+    local FMT=xml
 
     if [ "$1" = "-json" -o "$1" = "-xml" ]; then
         FMT=xml
