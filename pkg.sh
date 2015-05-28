@@ -968,9 +968,9 @@ function pkg_revert {
         ACCEPT="application/$FMT"
 
         if [ $DEBUG = 1 ]; then
-            echo curl $COPT -X PUT --data-binary @/dev/null $AUTH -H "Accept: $ACCEPT" "$BASE/v2/tickets/$1/revert" 1>&2
+            echo curl $COPT -X POST --data-binary @/dev/null $AUTH -H "Accept: $ACCEPT" "$BASE/v2/tickets/$1/revert" 1>&2
         fi
 
-        curl $COPT -X PUT --data-binary @/dev/null $AUTH -H "Accept: $ACCEPT" "$BASE/v2/tickets/$1/revert" 1>&2
+        curl $COPT -X POST --data-binary @/dev/null $AUTH -H "Accept: $ACCEPT" "$BASE/v2/tickets/$1/revert" 1>&2
     fi
 }
